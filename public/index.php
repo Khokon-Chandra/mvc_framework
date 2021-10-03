@@ -5,9 +5,6 @@ include_once "../lib/request/Request.php";
 
 
 
-
-
-
 Route::get('/',function(){
     return "This is home page";
 });
@@ -21,6 +18,7 @@ Route::get('/users',function(){
 });
 
 Route::get('category',function(){
+    
     return "this is category page";
 });
 
