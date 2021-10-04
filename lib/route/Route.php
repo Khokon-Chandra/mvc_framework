@@ -4,12 +4,14 @@
 class Route
 {
     protected Request $request;
+    protected View $view;
 
     public static $routes = [];
 
     public function __construct()
     {
         $this->request = new Request();
+        $this->view    = new View();
     }
       
     
@@ -36,9 +38,8 @@ class Route
         $callback      = self::$routes[$requestMethod][$requestPath]??false;
         
         if($callback === false){
-            return "404<br> Page not found";
+            return $this->view->renderView('404.php');
         }
-    
     
         return call_user_func($callback,$this->request);
       
