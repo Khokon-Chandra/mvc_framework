@@ -1,38 +1,27 @@
 <?php
-
-include_once "../lib/route/Route.php";
-include_once "../lib/request/Request.php";
-
+use test\MyClass;
+use lib\route\Route;
 
 
+include "../config.php";
+include "../lib/helpers.php";
 
+spl_autoload_register(function($className){
 
+    $filename = $className.".php";
+    $filename = BASE_URL."/".$filename;
 
-Route::get('/',function(){
-    return "This is home page";
-});
+    if(!file_exists($filename)){
+        echo $filename." file doesn' exitst";
+        exit();
+    }
 
-Route::get('post',function(Request $request){
-    return "this is post page";
-});
-
-Route::get('/users',function(){
-    echo "this is users page";
-});
-
-Route::get('category',function(){
-    return "this is category page";
-});
-
-Route::get('/contact',function(){
-    return "this is contact page";
-});
-
-Route::post('/save',function(){
-    return "post method called";
+    include_once $filename;
+   
 });
 
 
+include_once "../routes/web.php";
 
 
 

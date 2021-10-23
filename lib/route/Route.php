@@ -1,6 +1,8 @@
 <?php
 
+namespace lib\route;
 
+use lib\request\Request;
 class Route
 {
     protected Request $request;
