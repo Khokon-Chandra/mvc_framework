@@ -24,7 +24,7 @@ class View
     }
 
 
-    public function hasExtensionOfFile($filename)
+    private function hasExtensionOfFile($filename)
     {
         $filesArr = explode('.', $filename);
         if(in_array('php',$filesArr)){

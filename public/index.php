@@ -2,12 +2,10 @@
 use test\MyClass;
 use lib\route\Route;
 
-
 include "../config.php";
 include "../lib/helpers.php";
 
 spl_autoload_register(function($className){
-
     $filename = $className.".php";
     $filename = BASE_URL."/".$filename;
 
@@ -20,7 +18,6 @@ spl_autoload_register(function($className){
    
 });
 
-
 include_once "../routes/web.php";
 
 
@@ -28,6 +25,11 @@ include_once "../routes/web.php";
 
 $route = new Route();
 echo $route->run();
+
+
+
+
+
 
 
 

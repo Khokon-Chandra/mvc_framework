@@ -1,5 +1,6 @@
 <?php
 
+use app\Controllers\IndexController;
 use lib\request\Request;
 use lib\route\Route;
 
@@ -9,11 +10,9 @@ Route::get('/admin',function(){
 });
 
 
-Route::get('/',function(){
-   view('home');
-});
+Route::get('/',[IndexController::class,'index']);
 
-Route::get('post',function(Request $request){
+Route::get('post',function(){
     view('post');
 });
 

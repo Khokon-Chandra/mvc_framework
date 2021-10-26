@@ -9,6 +9,7 @@
 <body>
 
     <h1>This is home page</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis ducimus, quo, corporis natus accusamus saepe, at quae nulla doloremque rem cumque totam vel deleniti voluptas vero pariatur ipsam iure odit.</p>
     
 </body>
 </html>

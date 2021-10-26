@@ -2,6 +2,7 @@
 
 namespace lib\route;
 
+use app\Controllers\IndexController;
 use lib\request\Request;
 class Route
 {
@@ -40,8 +41,12 @@ class Route
         if($callback === false){
             return "404<br> Page not found";
         }
-    
-    
+        
+        if(is_array($callback)){
+           
+            $callback[0] = new $callback[0]();
+        }
+       
         return call_user_func($callback,$this->request);
       
     }
